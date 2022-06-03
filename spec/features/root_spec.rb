@@ -31,7 +31,27 @@ RSpec.describe 'the root landing page' do
 
       expect(page).to have_button("Create A New Account")
     end
+  end
 
+  it 'user submits valid player name to search bar' do
+    json_response = File.read('spec/fixtures/players_index.json')
+    stub_request(:get, "http://localhost:3000/api/v1/players?query=timmy").to_return(status: 200, body: json_response)
+    visit root_path
+
+      fill_in 'search_by_name', with: 'timmy'
+      click_button 'Search'
+
+      parsed = JSON.parse(response.body, symbolize_names: true)
+      players = parsed[:data]
+      
+      expect(response.status).to eq(200)
+      expect(players.class).to eq(Array)
+      players.each do |player|
+      expect(player).to have_key([:attributes])
+      expect(player[:attributes][:name]).to be_a String
+      expect(player[:attributes][:strength]).to be_a Integer
+      expect(player[:attributes][:class]).to be_a Hash
+    end
   end
 
 end
