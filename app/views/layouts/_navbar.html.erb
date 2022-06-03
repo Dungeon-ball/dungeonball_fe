@@ -1,0 +1,14 @@
+<div class="container">
+<nav class="navbar navbar-dark bg-dark">
+  <a class="navbar-brand">Dungeonball</a>
+  <form class="form-inline my-2 my-lg-0">
+    <div id="search_bar">
+      <%= form_with url: "/search/players", method: :get do |f| %>
+      <%= f.label :search_by_name %>
+      <%= f.text_field :search_by_name, placeholder: 'Search by player name' %>
+      <%= f.submit 'Search' %>
+      <% end %>
+    </div>
+  </form>
+</nav>
+</div>
