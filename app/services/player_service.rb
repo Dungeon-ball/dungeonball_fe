@@ -5,8 +5,8 @@ class PlayerService
     end
   end
 
-  def self.search_by_name
-    response = conn.get("/api/v1/players")
+  def self.get_all_players_by_name(name)
+    response = conn.get("/api/v1/players/#{name}")
     JSON.parse(response.body, symbolize_names: true)
   end
 end

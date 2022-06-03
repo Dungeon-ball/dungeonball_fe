@@ -1,6 +1,6 @@
 class Player
 
-  attr_reader :id, :agility, :dexterity, :strength, :charisma, :intelegence, :wisdom
+  attr_reader :id, :agility, :dexterity, :strength, :charisma, :intelligence, :wisdom, :class
 
   def initialize(data)
     # require 'pry'; binding.pry
@@ -10,7 +10,8 @@ class Player
     @dexterity = data[:attributes][:dexterity]
     @strength = data[:attributes][:strength]
     @charisma = data[:attributes][:charisma]
-    @intelegence = data[:attributes][:intelegence]
+    @intelligence = data[:attributes][:intelligence]
     @wisdom = data[:attributes][:wisdom]
+    @class = data[:attributes][:class]
   end
 end
