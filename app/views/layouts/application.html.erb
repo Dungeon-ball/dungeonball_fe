@@ -15,10 +15,12 @@
   </head>
 
   <body>
+
     <%= render "/layouts/navbar" %>
     <% flash.each do |name, msg| %>
     <div class="alert alert-danger" role="alert">
       <%= content_tag :div, msg, class:name %>
+
     </div>
     <% end %>
     <center>
