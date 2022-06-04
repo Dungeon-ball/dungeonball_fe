@@ -4,7 +4,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.7.2'
 
 gem 'omniauth-twitter'
+gem "omniauth-rails_csrf_protection"
 gem 'bootstrap', '~> 5.1.3'
+gem "bootstrap_form", "~> 5.0"
 gem 'jquery-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.8'

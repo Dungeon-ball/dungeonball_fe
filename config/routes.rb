@@ -5,8 +5,11 @@ Rails.application.routes.draw do
   # get '/login', to: 'sessions#new'
   # post '/login', to: 'sessions#create'
   # get '/logout', to: 'sessions#destroy'
-  get '/auth/twitter', as: 'twitter_login'
+  # post '/auth/twitter/callback', to: 'sessions#create'
+  get '/auth/twitter', as: :twitter_login
   get '/auth/twitter/callback', to: 'sessions#create'
+  get '/auth/failure', to: redirect('/')
+  get 'signout', to: 'sessions#destroy', as: 'signout'
   get '/search/players', to: 'searches#index'
   get '/player/show/:id', to: 'players#show'
   resources :users, only: [:create]
