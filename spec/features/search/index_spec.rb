@@ -23,7 +23,6 @@ RSpec.describe 'the search index page' do
 
       expect(current_path).to eq (search_players_path)
       click_on "Timmy Thompson"
-      save_and_open_page
     end
   end
 
