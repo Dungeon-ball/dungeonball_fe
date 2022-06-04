@@ -1,6 +1,6 @@
 class Player
 
-  attr_reader :id, :agility, :dexterity, :strength, :charisma, :intelligence, :wisdom, :class
+  attr_reader :id, :agility, :dexterity, :strength, :charisma, :intelligence, :wisdom, :class, :name
 
   def initialize(data)
 

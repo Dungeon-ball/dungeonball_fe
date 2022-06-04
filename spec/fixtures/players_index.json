@@ -28,6 +28,21 @@
           "class": { "name": "wizard", "description": "does wizardy things" }
 
       }
+    },
+    {
+        "id": "3",
+        "type": "player",
+        "attributes": {
+          "name": "Alex Psitos",
+          "strength": 15,
+          "dexterity": 14,
+          "constitution": 13,
+          "intelligence": 8,
+          "wisdom": 15,
+          "charisma": 12,
+          "class": { "name": "wizard", "description": "does wizardy things" }
+
+      }
     }
   ]
 }
