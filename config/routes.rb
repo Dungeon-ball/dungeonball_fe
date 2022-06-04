@@ -6,5 +6,6 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   get '/logout', to: 'sessions#destroy'
   get '/search/players', to: 'searches#index'
+  get '/player/show/:id', to: 'players#show'
   resources :users, only: [:create]
 end
