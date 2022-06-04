@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   get '/logout', to: 'sessions#destroy'
   get '/search/players', to: 'searches#index'
   get '/player/show/:id', to: 'players#show'
+  get 'parties/show/:id', to: 'parties#show'
   resources :users, only: [:create]
 end
