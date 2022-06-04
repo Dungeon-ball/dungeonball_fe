@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.7.2'
 
+gem 'omniauth-twitter'
 gem 'bootstrap', '~> 5.1.3'
 gem 'jquery-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
