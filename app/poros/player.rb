@@ -3,7 +3,6 @@ class Player
   attr_reader :id, :agility, :dexterity, :strength, :charisma, :intelligence, :wisdom, :class, :name
 
   def initialize(data)
-
     @id = data[:id]
     @name = data[:attributes][:name]
     @agility = data[:attributes][:agility]
