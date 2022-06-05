@@ -12,9 +12,12 @@
     </div>
   </form>
 
-  <%= link_to "Sign in with Twitter", "/auth/twitter", method: :post %>
-
-
 
 </nav>
+<% if current_user %>
+Hello, <%= current_user.screen_name %>
+<%= link_to "Logout", signout_path, method: :delete %>
+<% else %>
+<%= link_to "Sign in with Twitter", twitter_login_path %>
+<% end %>
 </div>

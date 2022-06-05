@@ -9,7 +9,7 @@
 # production:
 #   stripe_api_key: sk_live_EeHnL644i6zo4Iyq4v1KdV9H
 #   stripe_publishable_key: pk_live_9lcthxpSIHbGwmdO941O1XVU
-# twitter_api_key: Bbt5Gk2vlS2sXCRlQlBsrs3uH
-# twitter_api_secret: c6y5lTe3RVDd5MioElaJHmsqTlbv2nbvzazpszoBOSnnjIY9xs
-twitter_api_key: 883353101054464000-3NfTXV32YLcuEi0SnvKbR5VU7g846i4
-twitter_api_secret: 5VfBNDMEavxsrlyaI0bl0J9dIFUClQEKCKPnrAlcTxhDO
+twitter_api_key: Bbt5Gk2vlS2sXCRlQlBsrs3uH
+twitter_api_secret: c6y5lTe3RVDd5MioElaJHmsqTlbv2nbvzazpszoBOSnnjIY9xs
+# twitter_api_key: 1532193855348494336-8sSUgJhCpuaS2oJiNU2uL8mOm97mzr #access token heroku
+# twitter_api_secret: PmGfvEPwQyobLwtXvbdq1Yw3ax8spE28J6umFs4kbdGF3 # access token secret heroku
