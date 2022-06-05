@@ -11,5 +11,3 @@
 #   stripe_publishable_key: pk_live_9lcthxpSIHbGwmdO941O1XVU
 twitter_api_key: Bbt5Gk2vlS2sXCRlQlBsrs3uH
 twitter_api_secret: c6y5lTe3RVDd5MioElaJHmsqTlbv2nbvzazpszoBOSnnjIY9xs
-# twitter_api_key: 1532193855348494336-8sSUgJhCpuaS2oJiNU2uL8mOm97mzr #access token heroku
-# twitter_api_secret: PmGfvEPwQyobLwtXvbdq1Yw3ax8spE28J6umFs4kbdGF3 # access token secret heroku
