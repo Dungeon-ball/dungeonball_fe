@@ -18,6 +18,6 @@
 Hello, <%= current_user.screen_name %>
 <%= link_to "Logout", signout_path, method: :get %>
 <% else %>
-<%= link_to "Sign in with Twitter", twitter_login_path %>
+<%= link_to "Sign in with Twitter", twitter_login_path, method: :post %>
 <% end %>
 </div>
