@@ -1,8 +1,8 @@
 class PartiesController < ApplicationController
 
   def show
-    @party = PartyFacade.find_party_by_id(params[:id])
-    party = @party[0]
-    players = @party[1]
+    party_info = PartyFacade.find_party_by_id(params[:id])
+    @party = party_info[0]
+    @players = party_info[1]
   end
 end
