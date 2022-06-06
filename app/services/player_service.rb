@@ -11,7 +11,7 @@ class PlayerService < FaradayService
   # end
 
   def self.get_all_players_by_name(name)
-    # require 'pry'; binding.pry
+    require 'pry'; binding.pry
     get_url("/api/v1/players", name)
   end
 end

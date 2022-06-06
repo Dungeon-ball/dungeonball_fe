@@ -2,7 +2,6 @@
 <nav class="navbar navbar-dark bg-dark">
   <a class="navbar-brand">Dungeonball</a>
   <form class="form-inline my-2 my-lg-0">
-
     <div id="search_bar">
       <%= form_with url: "/search/players", method: :get do |f| %>
       <%= f.label :search_by_name %>
@@ -11,13 +10,5 @@
       <% end %>
     </div>
   </form>
-
-
 </nav>
-<% if current_user %>
-Hello, <%= current_user.screen_name %>
-<%= link_to "Logout", signout_path, method: :get %>
-<% else %>
-<%= link_to "Sign in with Twitter", twitter_login_path, method: :post %>
-<% end %>
 </div>
