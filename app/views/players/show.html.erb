@@ -6,9 +6,8 @@ Intelligence: <%= @player.intelligence %>
 Wisdom: <%= @player.wisdom %>
 Charisma: <%= @player.charisma %>
 Class: <%= @player.class %>
-
 <% if current_user %>
-  <%= button_to "Add Player to My Party", method: :post %>
+  <%= button_to "Add Player to My Party", "/player", id: @player.id, method: :post %>
 <% else %>
   <%= link_to "Sign in with Twitter to add this player to your party", twitter_login_path, method: :post %>
 <% end %>

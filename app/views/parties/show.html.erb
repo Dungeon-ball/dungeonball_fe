@@ -1,6 +1,12 @@
-<h1><%=  @party.name %></h1>
-<%@players.each do |player|%>
-  <ol>
-    <li><%= link_to "#{player[:name]}", "/player/show/#{player[:id]}"%></li>
-  </ol>
-<%end%>
+<% if current_user %>
+  <h1><%=  @party.name %></h1>
+  <%@players.each do |player|%>
+    <ol>
+      <li><%= link_to "#{player[:name]}", "/player/show/#{player[:id]}"%></li>
+    </ol>
+  <%end%>
+
+<% else %>
+sign in with Twitter to Create a party
+<%= link_to "Sign in with Twitter", twitter_login_path, method: :post %>
+<% end %>
