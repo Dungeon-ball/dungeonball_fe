@@ -43,7 +43,7 @@ RSpec.describe 'the root landing page' do
 
       parsed = JSON.parse(response.body, symbolize_names: true)
       players = parsed[:data]
-      
+
       expect(response.status).to eq(200)
       expect(players.class).to eq(Array)
       players.each do |player|
