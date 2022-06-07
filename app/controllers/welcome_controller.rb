@@ -1,5 +1,6 @@
 class WelcomeController < ApplicationController
 
   def index
-  end 
+    binding.pry
+  end
 end

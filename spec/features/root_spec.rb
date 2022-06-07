@@ -45,6 +45,7 @@ RSpec.describe 'the root landing page' do
       expect(page).to have_content("Thompson Stimmy")
       expect(page).to have_content("Alex Pstimmy")
 
+
   end
 
 end

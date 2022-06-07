@@ -1,0 +1,14 @@
+<h1><%= @player.name %></h1>
+Strength: <%= @player.strength %>
+Dexterity: <%= @player.dexterity %>
+Constitution: <%= @player.constitution %>
+Intelligence: <%= @player.intelligence %>
+Wisdom: <%= @player.wisdom %>
+Charisma: <%= @player.charisma %>
+Class: <%= @player.class %>
+
+<% if current_user %>
+  <%= button_to "Add Player to My Party", method: :post %>
+<% else %>
+  <%= link_to "Sign in with Twitter to add this player to your party", twitter_login_path, method: :post %>
+<% end %>

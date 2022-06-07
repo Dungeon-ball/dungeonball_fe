@@ -4,4 +4,9 @@ class PlayerFacade
       Player.new(player_data)
     end
   end
+
+  def self.find_player_by_id(id)
+      data = PlayerService.get_player_by_id(id)[:data]
+      Player.new(data)
+  end
 end
