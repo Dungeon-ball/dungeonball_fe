@@ -22,6 +22,10 @@ RSpec.describe 'party show page' do
       json_response = File.read('spec/fixtures/parties_show.json')
 
       stub_request(:get, "http://localhost:3000/api/v1/parties?query=16").to_return(status: 200, body: json_response)
+      OmniAuth.config.test_mode = true
+      Rails.application.env_config['omniauth.auth'] = OmniAuth.config.mock_auth[:twitter]
+      visit '/'
+      click_link("Sign in with Twitter")
       visit '/parties/show/16'
 
       click_on "Alex"

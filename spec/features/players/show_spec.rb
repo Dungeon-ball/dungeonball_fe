@@ -46,7 +46,6 @@ RSpec.describe 'player show page' do
       visit '/'
       click_link("Sign in with Twitter")
       visit '/players/1'
-      save_and_open_page
       expect(page).to have_button("Add Player to My Party")
     end
     # it 'has a button to add player to party that adds player to a party  ' do
@@ -58,6 +57,8 @@ RSpec.describe 'player show page' do
     #   visit '/'
     #   click_link("Sign in with Twitter")
     #   visit '/players/1'
+    #   click_button("Add Player to My Party")
+    #   save_and_open_page
     # end
   end
 end
