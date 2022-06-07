@@ -5,6 +5,7 @@ class FaradayService
       faraday.params[:query] = query unless query.nil?
     end
     response = conn.get(url)
+    # require 'pry'; binding.pry
     JSON.parse(response.body, symbolize_names: true)
   end
 end

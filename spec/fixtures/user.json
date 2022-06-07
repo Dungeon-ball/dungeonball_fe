@@ -1,0 +1,11 @@
+{
+  "data"=> {
+ id: 1,
+ screen_name: "BryGann",
+ uid: "1532193855348494336",
+ oauth_token: "1532193855348494336-8sSUgJhCpuaS2oJiNU2uL8mOm97mzr",
+ oauth_token_secret: "PmGfvEPwQyobLwtXvbdq1Yw3ax8spE28J6umFs4kbdGF3",
+ created_at: Sat, 04 Jun 2022 22:15:46 UTC +00:00,
+ updated_at: Sat, 04 Jun 2022 22:15:46 UTC +00:00>
+  }
+}
