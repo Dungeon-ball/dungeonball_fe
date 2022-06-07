@@ -41,16 +41,6 @@ RSpec.describe 'the root landing page' do
       fill_in 'search_by_name', with: 'timmy'
       click_button 'Search'
 
-      # require 'pry'; binding.pry
-      # parsed = JSON.parse(response.body, symbolize_names: true)
-      # players = parsed[:data]
-      # expect(response.status).to eq(200)
-      # expect(players.class).to eq(Array)
-      # players.each do |player|
-      # expect(player).to have_key([:attributes])
-      # expect(player[:attributes][:name]).to be_a String
-      # expect(player[:attributes][:strength]).to be_a Integer
-      # expect(player[:attributes][:class]).to be_a Hash
       expect(page).to have_content("Timmy Thompson")
       expect(page).to have_content("Thompson Stimmy")
       expect(page).to have_content("Alex Pstimmy")
