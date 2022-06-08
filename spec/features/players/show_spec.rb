@@ -71,11 +71,19 @@ RSpec.describe 'player show page' do
       expect(page).to have_content("Drew")
     end
 
-    xit 'does not show add player if the player is already in the party' do
-      json_response = File.read('spec/fixtures/parties_show.json')
-      stub_request(:get, "http://localhost:3000/api/v1/parties?query=16").to_return(status: 200, body: json_response)
+    it 'does not show add player if the player is already in the party' do
+      json_response = File.read('spec/fixtures/players_show.json')
+      json_response2 = File.read('spec/fixtures/parties_show.json')
+      stub_request(:get, "http://localhost:3000/api/v1/players/1").to_return(status: 200, body: json_response)
+      stub_request(:get, "http://localhost:3000/api/v1/parties?query=12345").to_return(status: 200, body: json_response2)
 
       OmniAuth.config.test_mode = true
       Rails.application.env_config['omniauth.auth'] = OmniAuth.config.mock_auth[:twitter]
+
+      visit '/'
+      click_link("Sign in with Twitter")
+      visit '/players/1'
+      expect(page).to have_content("Party Member")
+      expect(page).to_not have_content("Add Player to My Party")
     end
   end
