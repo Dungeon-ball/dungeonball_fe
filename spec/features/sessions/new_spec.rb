@@ -15,5 +15,6 @@ RSpec.describe 'logging in with Twitter' do
     expect(page).to_not have_link('Sign in with Twitter')
     expect(page).to have_content('Hello, DoodlesMcGaha')
     expect(page).to have_link('Logout')
+    expect(page).to have_link('My Party')
   end
 end

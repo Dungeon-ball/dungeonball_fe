@@ -10,9 +10,9 @@ class PartyService < FaradayService
   #   JSON.parse(response.body, symbolize_names: true)
   # end
 
-  def self.get_party_by_id(id)
+  def self.get_party_by_id(user_id)
     # require 'pry'; binding.pry
-    get_url("/api/v1/parties", id)
+    get_url("/api/v1/party", user_id)
   end
 
   def self.update_player_party(user_id, player_id)
