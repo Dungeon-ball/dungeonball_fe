@@ -13,6 +13,6 @@ Rails.application.routes.draw do
   get '/search/players', to: 'searches#index'
   get 'players/:id', to: 'players#show'
   get 'parties/show/:id', to: 'parties#show'
-  post 'players/post/:id', to: 'players#post'
+  post 'players/post/:id', to: 'players#add_to_party'
   resources :users, only: [:create]
 end

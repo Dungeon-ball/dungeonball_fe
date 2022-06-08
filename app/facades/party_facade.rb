@@ -11,4 +11,8 @@ class PartyFacade
     end
     [party,players]
   end
+
+  def self.add_player_to_party
+    PartyService.add_player_to_party(user_id, player_id)
+  end
 end
