@@ -15,8 +15,8 @@ class PartyService < FaradayService
     get_url("/api/v1/parties", id)
   end
 
-  def self.add_player_to_party(user_id, player_id)
-    get_url("/api/v1/parties/players",user_id, player_id )
-    redirect_to "pla"
+  def self.update_player_party(user_id, player_id)
+
+    post_url("/api/v1/parties/#{user_id}/players", player_id )
   end
 end

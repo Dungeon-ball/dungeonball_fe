@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'player show page' do
 
-  context 'shows all player attributes' do
+
     it 'shows the a list of players names who are in the party' do
       json_response = File.read('spec/fixtures/players_show.json')
       stub_request(:get, "http://localhost:3000/api/v1/players/1").to_return(status: 200, body: json_response)
@@ -39,7 +39,9 @@ RSpec.describe 'player show page' do
 
     it 'has a button to add player to party if logged in  ' do
       json_response = File.read('spec/fixtures/players_show.json')
+      json_response2 = File.read('spec/fixtures/empty_party.json')
       stub_request(:get, "http://localhost:3000/api/v1/players/1").to_return(status: 200, body: json_response)
+      stub_request(:get, "http://localhost:3000/api/v1/parties?query=12345").to_return(status: 200, body: json_response2)
 
       OmniAuth.config.test_mode = true
       Rails.application.env_config['omniauth.auth'] = OmniAuth.config.mock_auth[:twitter]
@@ -48,17 +50,32 @@ RSpec.describe 'player show page' do
       visit '/players/1'
       expect(page).to have_button("Add Player to My Party")
     end
-    # it 'has a button to add player to party that adds player to a party  ' do
-    #   json_response = File.read('spec/fixtures/players_show.json')
-    #   stub_request(:get, "http://localhost:3000/api/v1/players/1").to_return(status: 200, body: json_response)
-    #
-    #   OmniAuth.config.test_mode = true
-    #   Rails.application.env_config['omniauth.auth'] = OmniAuth.config.mock_auth[:twitter]
-    #   visit '/'
-    #   click_link("Sign in with Twitter")
-    #   visit '/players/1'
-    #   click_button("Add Player to My Party")
-    #   save_and_open_page
-    # end
+
+    it 'has a button to add player to party that adds player to a party  ' do
+      json_response = File.read('spec/fixtures/players_show.json')
+      json_response2 = File.read('spec/fixtures/add_player_after.json')
+      json_response3 = File.read('spec/fixtures/party_show_12345.json')
+      stub_request(:get, "http://localhost:3000/api/v1/players/1").to_return(status: 200, body: json_response)
+      stub_request(:post, "http://localhost:3000/api/v1/parties/12345/players?query=1").to_return(status: 200, body: json_response2)
+      stub_request(:get, "http://localhost:3000/api/v1/parties?query=12345").to_return(status: 200, body: json_response3)
+
+      OmniAuth.config.test_mode = true
+      Rails.application.env_config['omniauth.auth'] = OmniAuth.config.mock_auth[:twitter]
+
+      visit '/'
+      click_link("Sign in with Twitter")
+      visit '/players/1'
+      click_button("Add Player to My Party")
+
+      expect(page).to have_content("Awesome party")
+      expect(page).to have_content("Drew")
+    end
+
+    xit 'does not show add player if the player is already in the party' do
+      json_response = File.read('spec/fixtures/parties_show.json')
+      stub_request(:get, "http://localhost:3000/api/v1/parties?query=16").to_return(status: 200, body: json_response)
+
+      OmniAuth.config.test_mode = true
+      Rails.application.env_config['omniauth.auth'] = OmniAuth.config.mock_auth[:twitter]
+    end
   end
-end

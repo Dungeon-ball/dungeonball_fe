@@ -2,10 +2,11 @@ class PlayersController < ApplicationController
 
   def show
     @player = PlayerFacade.find_player_by_id(params[:id])
-  end
-
-  def add_to_party
-    binding.pry
-    redirect_to '/parties/show'
+    if current_user
+      @user = current_user.uid
+      @player_in_party = PartyFacade.player_in_party?(@user,params[:id])
+    else
+      @player_in_party = false
+    end
   end
 end
