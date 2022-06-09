@@ -1,0 +1,26 @@
+{
+  "data": {
+    "id": 123456789,
+    "type": "party",
+    "attributes": {
+      "name": "Awesome party",
+      "relationships":  {
+        "players": {
+          "data": [
+            {
+              "type": "player",
+              "id": 1,
+              "name": "Gerald"
+            }
+          ]
+        },
+        "user" : {
+          "data": {
+          "type": "user",
+          "id": "123456789"
+          }
+        }
+      }
+    }
+  }
+}
