@@ -1,0 +1,70 @@
+<div class="list-group">
+  <a href="#" class="list-group-item list-group-item-action active">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">Why <%= @player.class %>?</h5>
+      <small></small>
+    </div>
+    <p class="mb-1"></p>
+    <small><%= @player.description %></small>
+  </a>
+  <a href="#" class="list-group-item list-group-item-action">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">Strength: <%= @player.strength %></h5>
+      <small class="text-muted">STR</small>
+    </div>
+    <p class="mb-1"></p>
+    <small class="text-muted"></small>
+  </a>
+  <a href="#" class="list-group-item list-group-item-action">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">Dexterity: <%= @player.dexterity %></h5>
+      <small class="text-muted">DEX</small>
+    </div>
+    <p class="mb-1"></p>
+    <small class="text-muted"></small>
+  </a>
+  <a href="#" class="list-group-item list-group-item-action">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">Constitution: <%= @player.constitution %></h5>
+      <small class="text-muted">CON</small>
+    </div>
+    <p class="mb-1"></p>
+    <small class="text-muted"></small>
+  </a>
+  <a href="#" class="list-group-item list-group-item-action">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">Intelligence: <%= @player.intelligence %></h5>
+      <small class="text-muted">INT</small>
+    </div>
+    <p class="mb-1"></p>
+    <small class="text-muted"></small>
+  </a>
+  <a href="#" class="list-group-item list-group-item-action">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">Wisdom: <%= @player.wisdom %></h5>
+      <small class="text-muted">WIS</small>
+    </div>
+    <p class="mb-1"></p>
+    <small class="text-muted"></small>
+  </a>
+  <a href="#" class="list-group-item list-group-item-action">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">Charisma: <%= @player.charisma %></h5>
+      <small class="text-muted">CHA</small>
+    </div>
+    <p class="mb-1"></p>
+    <small class="text-muted"></small>
+  </a>
+  <a href="#" class="list-group-item list-group-item-action">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">Proficiencies:</h5><br/>
+      <% @player.proficiencies.each do |p| %>
+      <ul>
+        <small><li><%= p.to_s %></li></small>
+      <% end %>
+      </ul>
+    </div>
+    <p class="mb-1"></p>
+    <small class="text-muted"></small>
+  </a>
+</div>
