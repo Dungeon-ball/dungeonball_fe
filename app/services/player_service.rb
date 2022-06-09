@@ -7,7 +7,7 @@ class PlayerService
 
   def self.get_all_players_by_name(name)
     response = conn.get("/api/v1/players") do |r|
-      r.params[:query] = name
+      r.params[:name] = name
     end
     JSON.parse(response.body, symbolize_names: true)
   end
