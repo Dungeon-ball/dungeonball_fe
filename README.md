@@ -34,7 +34,7 @@ This appliation was written for
 
 ### Navigation and Authorization
 
-![FE Flow (2)](https://user-images.githubusercontent.com/70451678/172930047-a8fd6f0c-74e4-424d-bb48-d88db1ead290.png)
+![code_flow.png](https://user-images.githubusercontent.com/70451678/172932144-ed4f02be-e43e-404e-8bc7-b609b13125be.png)
 
 ### Welcome Page
 
