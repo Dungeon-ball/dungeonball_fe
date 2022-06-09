@@ -13,6 +13,7 @@ bundle install
 rails db:{create:migrate}
 ```
 ![database](https://user-images.githubusercontent.com/70451678/172773800-1dd7a55b-8a41-4544-b830-999585354071.png)
+
 4. This build uses OmniAuth to manage oauth login, which requires the use of sensitive infomations that should not be compromised. We use the Figaro gem to provide access to `ENV` variables in development and testing, and implement a production strategy unique to our host. To properly implement this application, set the following environment variables:
   ```ruby
   BE_AUTH_KEY: value # Recommended strong password, same as backend
@@ -33,8 +34,7 @@ This appliation was written for
 
 ### Navigation and Authorization
 
-![FE Flow (2)](https://user-images.githubusercontent.com/70451678/172923048-8cfbfe58-e1d3-44fe-a7c1-79d1d782375a.png)
-
+![FE Flow (2)](https://user-images.githubusercontent.com/70451678/172930047-a8fd6f0c-74e4-424d-bb48-d88db1ead290.png)
 
 ### Welcome Page
 
