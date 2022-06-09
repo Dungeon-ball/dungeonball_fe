@@ -1,0 +1,24 @@
+{
+  "data": {
+    "id": "2",
+    "type": "player",
+    "attributes": {
+      "name": "Alex",
+      "strength": 15,
+      "dexterity": 14,
+      "constitution": 13,
+      "intelligence": 8,
+      "wisdom": 15,
+      "charisma": 12,
+      "class": {
+        "name": "wizard",
+        "hitpoints": 9,
+        "proficiencies": [
+           "thing1",
+           "thing2",
+           "thing3"
+        ]
+      }
+    }
+  }
+}

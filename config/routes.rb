@@ -11,8 +11,8 @@ Rails.application.routes.draw do
   get '/auth/failure', to: redirect('/')
   get 'signout', to: 'sessions#destroy', as: 'signout'
   get '/search/players', to: 'searches#index'
-  get 'players/:id', to: 'players#show'
-  get 'parties/show/:id', to: 'parties#show'
-  post 'players/post/:id', to: 'players#post'
+  get '/players/:id', to: 'players#show'
+  get '/parties/:id', to: 'parties#show'
+  post '/parties/:id/players', to: 'parties#update'
   resources :users, only: [:create]
 end
