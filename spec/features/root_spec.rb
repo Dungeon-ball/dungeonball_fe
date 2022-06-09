@@ -27,7 +27,7 @@ RSpec.describe 'the root landing page' do
 
   it 'user submits valid player name to search bar' do
     json_response = File.read('spec/fixtures/players_index.json')
-    stub_request(:get, "http://localhost:3000/api/v1/players?query=timmy").to_return(status: 200, body: json_response)
+    stub_request(:get, "http://localhost:3000/api/v1/players?name=timmy").to_return(status: 200, body: json_response)
     visit root_path
 
       fill_in 'search_by_name', with: 'timmy'
