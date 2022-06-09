@@ -11,7 +11,9 @@ class PartyService
   end
 
   def self.update_player_party(user_id, player_id)
-    response = conn.post("/api/v1/party/#{user_id}/players/#{player_id}")
+    response = conn.post("/api/v1/party/players/#{player_id}") do |c|
+      p.params[:user_id] = user_id
+    end
     JSON.parse(response.body, symbolize_names: true)
   end
 
