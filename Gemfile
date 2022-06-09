@@ -51,6 +51,7 @@ group :development, :test do
   gem 'pry'
   gem 'capybara'
   gem 'database_cleaner-active_record'
+  gem 'simplecov'
 end
 
 group :development do
@@ -63,7 +64,6 @@ group :development do
 end
 
 group :test do
-  gem 'capybara'
   gem 'rspec-rails'
   gem 'factory_bot_rails'
   gem 'faker'
