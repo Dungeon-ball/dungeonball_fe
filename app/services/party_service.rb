@@ -1,17 +1,25 @@
-class PartyService < FaradayService
-  # def self.conn
-  #   Faraday.new(url: "http://localhost:3000") do |f|
-  #     f.adapter Faraday.default_adapter
-  #   end
-  # end
-
-  # def self.get_all_players_by_name(name)
-  #   response = conn.get("/api/v1/players/#{name}")
-  #   JSON.parse(response.body, symbolize_names: true)
-  # end
-
-  def self.get_party_by_id(id)
-    # require 'pry'; binding.pry
-    get_url("/api/v1/parties", id)
+class PartyService
+  def self.conn
+    Faraday.new(url: ENV['BASE_URL'], headers: { 'be_auth_key' => ENV["BE_AUTH_KEY"] }) do |f|
+      f.adapter Faraday.default_adapter
+    end
   end
+
+  def self.get_party_by_id(user_id)
+    response = conn.get("/api/v1/party")
+    JSON.parse(response.body, symbolize_names: true)
+  end
+
+  def self.update_player_party(user_id, player_id)
+    response = conn.post("/api/v1/party/#{user_id}/players/#{player_id}")
+    JSON.parse(response.body, symbolize_names: true)
+  end
+
+  # def self.get_party_by_id(user_id)
+  #   get_url("/api/v1/party", {query: user_id})
+  # end
+
+  # def self.update_player_party(user_id, player_id)
+  #   post_url("/api/v1/parties/#{user_id}/players", {query: player_id})
+  # end
 end
