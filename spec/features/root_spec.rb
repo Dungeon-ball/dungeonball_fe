@@ -18,18 +18,10 @@ RSpec.describe 'the root landing page' do
       end
     end
 
-    it 'has a button to login' do
+    it 'has a link to sign in with Twitter' do
       visit root_path
 
-      within "#login" do
-        expect(page).to have_button("Login")
-      end
-    end
-
-    it 'has a button to create a new account' do
-      visit root_path
-
-      expect(page).to have_button("Create A New Account")
+      expect(page).to have_link("Sign in with Twitter")
     end
   end
 
@@ -44,8 +36,5 @@ RSpec.describe 'the root landing page' do
       expect(page).to have_content("Timmy Thompson")
       expect(page).to have_content("Thompson Stimmy")
       expect(page).to have_content("Alex Pstimmy")
-
-
   end
-
 end

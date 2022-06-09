@@ -12,7 +12,12 @@ Rails.application.routes.draw do
   get 'signout', to: 'sessions#destroy', as: 'signout'
   get '/search/players', to: 'searches#index'
   get '/players/:id', to: 'players#show'
-  get 'parties/show/:id', to: 'parties#show'
-  post 'players/post/:id', to: 'players#post'
-  resources :users, only: [:create]
+  get 'parties/:id', to: 'parties#show'
+  get '/party', to: 'parties#show'
+  post '/parties/:id/players', to: 'parties#update'
+  # resources :users, only: [:create] do
+  #   resources :parties, only:[:show, :update, :destroy] do
+  #     resources :players, only:[:show]
+  #   end
+  # end
 end

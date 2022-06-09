@@ -29,6 +29,8 @@ RSpec.describe 'the search index page' do
       expect(current_path).to eq (search_players_path)
       expect(page).to have_link("Timmy Thompson")
       click_link("Timmy Thompson")
+      stub_request(:get, "http://localhost:3000/api/v1/players/1").to_return(status: 200, body: json_response_2)
+
       expect(current_path).to eq("/players/1")
       expect(page).to have_content("Timmy Thompson")
       expect(page).to have_content("Strength: 15")

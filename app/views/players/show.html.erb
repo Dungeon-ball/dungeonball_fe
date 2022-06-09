@@ -1,14 +1,20 @@
-<h1><%= @player.name %></h1>
-Strength: <%= @player.strength %>
-Dexterity: <%= @player.dexterity %>
-Constitution: <%= @player.constitution %>
-Intelligence: <%= @player.intelligence %>
-Wisdom: <%= @player.wisdom %>
-Charisma: <%= @player.charisma %>
-Class: <%= @player.class %>
+<div class="container">
+  <h1><%= @player.name %></h1>
+  Strength: <%= @player.strength %>
+  Dexterity: <%= @player.dexterity %>
+  Constitution: <%= @player.constitution %>
+  Intelligence: <%= @player.intelligence %>
+  Wisdom: <%= @player.wisdom %>
+  Charisma: <%= @player.charisma %>
+  Class: <%= @player.class %>
 
-<% if current_user %>
-  <%= button_to "Add Player to My Party", method: :post %>
-<% else %>
-  <%= link_to "Sign in with Twitter to add this player to your party", twitter_login_path, method: :post %>
-<% end %>
+  <% if current_user %>
+    <% if !PartyFacade.player_in_party?(current_user.id, @player.id) %>
+      <%= button_to "Add Player to My Party", url: "/parties/#{current_user.id}/players", player_id: @player.id, method: :post %>
+      <% else %>
+      <p>Party Member</p>
+    <% end %>
+    <% else %>
+      <%= link_to "Sign in with Twitter to add this player to your party", twitter_login_path, method: :post %>
+  <% end %>
+</div>
