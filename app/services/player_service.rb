@@ -14,22 +14,6 @@ class PlayerService
 
   def self.get_player_by_id(id)
     response = conn.get("/api/v1/players/#{id}")
-    # require 'pry'; binding.pry
     JSON.parse(response.body, symbolize_names: true)
   end
-
-  # def self.get_all_players_by_name(name)
-  #   response = conn.get("/api/v1/players/#{name}")
-  #   JSON.parse(response.body, symbolize_names: true)
-  # end
-
-  # def self.get_all_players_by_name(name)
-  #   # require 'pry'; binding.pry
-  #   get_url("/api/v1/players", name)
-  # end
-  #
-  # def self.get_player_by_id(id)
-  #   # require 'pry'; binding.pry
-  #   get_url("/api/v1/players/#{id}")
-  # end
 end

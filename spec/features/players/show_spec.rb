@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe 'player show page' do
-
   context 'shows all player attributes' do
     it 'shows all the attributes of a specific player' do
       json_response = File.read('spec/fixtures/player_89.json')
@@ -31,7 +30,6 @@ RSpec.describe 'player show page' do
 
   context 'as a logged-in user' do
     before do
-      # OmniAuth.config.mock_auth[:twitter] = nil
       OmniAuth.config.test_mode = true
       Rails.application.env_config['omniauth.auth'] = OmniAuth.config.mock_auth[:twitter]
       visit root_path
