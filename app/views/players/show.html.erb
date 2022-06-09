@@ -1,12 +1,8 @@
 <div class="container">
-  <h1><%= @player.name %></h1>
-  Strength: <%= @player.strength %>
-  Dexterity: <%= @player.dexterity %>
-  Constitution: <%= @player.constitution %>
-  Intelligence: <%= @player.intelligence %>
-  Wisdom: <%= @player.wisdom %>
-  Charisma: <%= @player.charisma %>
-  Class: <%= @player.class %>
+  <h1><%= @player.name %></h1><br/>
+  <h3>Class: <%= @player.class %></h3>
+  <%= render "/layouts/player_ability_scores" %>
+  
 
   <% if current_user %>
     <% if !PartyFacade.player_in_party?(current_user.id, @player.id) %>
