@@ -20,4 +20,14 @@ RSpec.describe PlayerFacade do
       expect(results[2].name.downcase).to include("timmy")
     end
   end
+  describe 'find player by id' do
+    it 'find player by id' do
+      json_response = File.read('spec/fixtures/players_show.json')
+      stub_request(:get, "http://localhost:3000/api/v1/players/1").to_return(status: 200, body: json_response)
+
+      player = PlayerFacade.find_player_by_id(1)
+
+      expect(player).to be_an_instance_of(Player)
+    end
+  end
 end
