@@ -14,14 +14,14 @@ rails db:{create:migrate}
 ```
 ![database](https://user-images.githubusercontent.com/70451678/172773800-1dd7a55b-8a41-4544-b830-999585354071.png)
 
-4. This build uses OmniAuth to manage oauth login, which requires the use of sensitive keys and access tokens that should not be compromised. We use the gem Figaro to provide access to `ENV` variables in development and testing, and implement a production strategy unique to our host. To properly implement this application, set the following environment variables (if using Figaro, these can be set in `/config/application.yml`):
+4. This build uses OmniAuth-Twitter to manage oauth login, which requires the use of sensitive keys and access tokens that should not be compromised. We use the gem Figaro to provide access to `ENV` variables in development and testing, and implement a production strategy unique to our host. To properly implement this application, set the following environment variables (if using Figaro, these can be set in `/config/application.yml`):
   ```ruby
   BE_AUTH_KEY: value # Recommended strong password, same as backend
   BASE_URL: url # Should reflect the base url of the backend server's deployment in testing/development.
   twitter_api_key: value # Obtained through Twitter
   twitter_api_secret: value # Obtained through Twitter
   ```
-5. Run `rails s` on your front end and back end applications to ensure both are running simultaniously.
+5. Run `rails s` on your front end and back end applications to ensure both are running simultaneously.
 6. You're up and running! We recommend you run `bundle exec rspec` and ensure all tests pass before deploying this software.
 
 ### Dependencies
@@ -69,7 +69,7 @@ Here a user or visitor can see the base stats of this football player's characte
 <img width="1033" alt="party show" src="https://user-images.githubusercontent.com/70451678/172923975-e4c9d995-30d5-45c9-9c5c-38bd3ee51f5a.png">
 
 
-Access to this page is restricted to only logged in users. Here a user can see the members of their party, if there are any. Each player listed includes a link back to their show page.
+Access to this page is restricted to only logged in users. Here a user can see the members of their party, if any have been saved. Each player listed includes a link back to their show page.
 
 ## Contact
 
