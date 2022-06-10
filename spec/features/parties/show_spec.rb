@@ -14,7 +14,7 @@ RSpec.describe 'party show page' do
     it 'shows a list of players names who are in the party' do
       json_response = File.read('spec/fixtures/parties_show.json')
 
-      stub_request(:get, "http://localhost:3000/api/v1/party").to_return(status: 200, body: json_response)
+      stub_request(:get, "http://localhost:3000/api/v1/party?user_id=1").to_return(status: 200, body: json_response)
       visit '/party'
 
       expect(page).to have_link("Gerald")
@@ -23,12 +23,12 @@ RSpec.describe 'party show page' do
 
     it 'players names link to their show pages' do
       party_json_response = File.read('spec/fixtures/parties_show.json')
-      stub_request(:get, "http://localhost:3000/api/v1/party").to_return(status: 200, body: party_json_response)
+      stub_request(:get, "http://localhost:3000/api/v1/party?user_id=1").to_return(status: 200, body: party_json_response)
+
+      visit '/party'
 
       player_json_response = File.read('spec/fixtures/players_show.json')
       stub_request(:get, "http://localhost:3000/api/v1/players/1").to_return(status: 200, body: player_json_response)
-      visit '/party'
-
       click_on "Gerald"
 
       expect(current_path).to eq("/players/1")

@@ -16,7 +16,7 @@ RSpec.describe PartyService do
     json_response = File.read("spec/fixtures/add_player_after.json")
     stub_request(:post, "http://localhost:3000/api/v1/party/players?user_id=12345&player_id=1").to_return(status: 200, body: json_response)
     updated_party = PartyService.update_player_party(12345,1)
-    binding.pry
+
     expect(updated_party).to be_a(Hash)
     expect(updated_party[:data][:type]).to eq("party")
     expect(updated_party[:data][:attributes][:relationships][:players][:data].length).to eq(1)

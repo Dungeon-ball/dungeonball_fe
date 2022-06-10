@@ -2,7 +2,6 @@ class PartyFacade
 
 
   def self.find_party_by_id(user_id)
-# require 'pry'; binding.pry
     raw_data = PartyService.get_party_by_id(user_id)
     party = Party.new(raw_data[:data])
 

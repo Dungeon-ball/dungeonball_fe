@@ -39,7 +39,7 @@ RSpec.configure do |config|
   # examples within a transaction, remove the following line or assign false
   # instead of true.
   config.use_transactional_fixtures = false
-  config.before(:suite) do
+  config.before(:each) do
     DatabaseCleaner.clean_with :truncation, except: %w(ar_internal_metadata)
   end
   config.before(:each) do
