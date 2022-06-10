@@ -14,7 +14,7 @@ class PartiesController < ApplicationController
   end
 
   def update
-    PartyService.update_player_party(current_user.id, params[:id])
+    PartyService.update_player_party(current_user.id, params[:player_id])
     redirect_to '/party'
   end
 end

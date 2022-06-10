@@ -2,11 +2,11 @@
   <h1><%= @player.name %></h1><br/>
   <h3>Class: <%= @player.class %></h3>
   <%= render "/layouts/player_ability_scores" %>
-  
+
 
   <% if current_user %>
     <% if !PartyFacade.player_in_party?(current_user.id, @player.id) %>
-      <%= button_to "Add Player to My Party", "/parties/#{current_user.id}/players", player_id: @player.id, method: :post %>
+      <%= button_to "Add Player to My Party", "/parties/#{current_user.id}/players", params: {player_id: @player.id}, method: :post, local: true %>
       <% else %>
       <p>Party Member</p>
     <% end %>

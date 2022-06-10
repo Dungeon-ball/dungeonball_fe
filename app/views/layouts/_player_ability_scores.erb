@@ -58,13 +58,14 @@
   <a href="#" class="list-group-item list-group-item-action">
     <div class="d-flex w-100 justify-content-between">
       <h5 class="mb-1">Proficiencies:</h5><br/>
-      <% @player.proficiencies.each do |p| %>
-      <ul>
-        <small><li><%= p.to_s %></li></small>
-      <% end %>
-      </ul>
     </div>
     <p class="mb-1"></p>
-    <small class="text-muted"></small>
+    <small class="text-muted">
+      <ul>
+        <% @player.proficiencies.each do |p| %>
+        <small><li><%= p.to_s %></li></small>
+        <% end %>
+      </ul>
+    </small>
   </a>
 </div>
