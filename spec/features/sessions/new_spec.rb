@@ -20,7 +20,7 @@ RSpec.describe 'logging in with Twitter' do
 
   it 'the my party link redirects me to my party show page' do
     json_response = File.read('spec/fixtures/parties_show.json')
-    stub_request(:get, "http://localhost:3000/api/v1/party").to_return(status: 200, body: json_response)
+    stub_request(:get, "http://localhost:3000/api/v1/party?user_id=1").to_return(status: 200, body: json_response)
 
     visit root_path
     click_on 'Sign in with Twitter'

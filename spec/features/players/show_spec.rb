@@ -41,7 +41,7 @@ RSpec.describe 'player show page' do
       players_json_response = File.read('spec/fixtures/players_show.json')
       stub_request(:get, "http://localhost:3000/api/v1/players/1").to_return(status: 200, body: players_json_response)
       party_json_response = File.read('spec/fixtures/parties_show.json')
-      stub_request(:get, "http://localhost:3000/api/v1/party").to_return(status: 200, body: party_json_response)
+      stub_request(:get, "http://localhost:3000/api/v1/party?user_id=1").to_return(status: 200, body: party_json_response)
       visit '/players/1'
 
       expect(page).to_not have_button('Add Player to My Party')
@@ -51,7 +51,7 @@ RSpec.describe 'player show page' do
       players_json_response = File.read('spec/fixtures/players_show.json')
       stub_request(:get, "http://localhost:3000/api/v1/players/1").to_return(status: 200, body: players_json_response)
       party_json_response = File.read('spec/fixtures/empty_parties_show.json')
-      stub_request(:get, "http://localhost:3000/api/v1/party").to_return(status: 200, body: party_json_response)
+      stub_request(:get, "http://localhost:3000/api/v1/party?user_id=1").to_return(status: 200, body: party_json_response)
       visit '/players/1'
 
       expect(page).to have_button('Add Player to My Party')
