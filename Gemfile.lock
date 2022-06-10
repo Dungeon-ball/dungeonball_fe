@@ -132,17 +132,10 @@ GEM
     matrix (0.4.2)
     method_source (1.0.0)
     mini_mime (1.1.2)
-
-    mini_portile2 (2.8.0)
     minitest (5.15.0)
     msgpack (1.5.2)
     nio4r (2.5.8)
-    nokogiri (1.13.6)
-      mini_portile2 (~> 2.8.0)
-      racc (~> 1.4)
     nokogiri (1.13.6-arm64-darwin)
-      racc (~> 1.4)
-    nokogiri (1.13.6-x86_64-linux)
       racc (~> 1.4)
     oauth (0.5.10)
     omniauth (2.1.0)
@@ -190,7 +183,7 @@ GEM
     rails-dom-testing (2.0.3)
       activesupport (>= 4.2.0)
       nokogiri (>= 1.6)
-    rails-html-sanitizer (1.4.2)
+    rails-html-sanitizer (1.4.3)
       loofah (~> 2.3)
     railties (5.2.8)
       actionpack (= 5.2.8)
@@ -292,11 +285,7 @@ GEM
       nokogiri (~> 1.8)
 
 PLATFORMS
-
   arm64-darwin-21
-  ruby
-  x86_64-linux
-
 
 DEPENDENCIES
   bootsnap (>= 1.1.0)
