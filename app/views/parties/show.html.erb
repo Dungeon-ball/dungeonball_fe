@@ -1,6 +1,6 @@
 <h1><%=  @party.name %></h1>
+<ol>
 <%@players.each do |player|%>
-  <ol>
     <li><%= link_to "#{player[:name]}", "/players/#{player[:id]}", method: :get %></li>
-  </ol>
 <%end%>
+</ol>
