@@ -14,7 +14,7 @@ rails db:{create:migrate}
 ```
 ![database](https://user-images.githubusercontent.com/70451678/172773800-1dd7a55b-8a41-4544-b830-999585354071.png)
 
-4. This build uses OmniAuth to manage oauth login, which requires the use of sensitive infomations that should not be compromised. We use the Figaro gem to provide access to `ENV` variables in development and testing, and implement a production strategy unique to our host. To properly implement this application, set the following environment variables:
+4. This build uses OmniAuth to manage oauth login, which requires the use of sensitive keys and access tokens that should not be compromised. We use the gem Figaro to provide access to `ENV` variables in development and testing, and implement a production strategy unique to our host. To properly implement this application, set the following environment variables (if using Figaro, these can be set in `/config/application.yml`):
   ```ruby
   BE_AUTH_KEY: value # Recommended strong password, same as backend
   BASE_URL: url # Should reflect the base url of the backend server's deployment in testing/development.
@@ -75,12 +75,12 @@ Access to this page is restricted to only logged in users. Here a user can see t
 
 ### Contributors
 
-* Alex Psitos     | [Github](https://github.com/psitosam) | [LinkedIn](https://www.linkedin.com/in/alex-psitos-5429a1232/) 
-* Brylan Gannon   | [Github](https://github.com/B-gann21) | [LinkedIn](https://www.linkedin.com/in/brylan-gannon-81986b232/) 
-* Drew Proebstel  | [Github](https://github.com/DrewProebstel) | [LinkedIn](https://www.linkedin.com/in/drew-proebstel/) 
-* Joseph Senecal  | [Github](https://github.com/Josenecal) | [LinkedIn](https://www.linkedin.com/in/joseph-senecal-3947a9232/) 
-* Tyler Ross      | [Github](https://github.com/Tross0208) | [LinkedIn](http://www.linkedin.com/in/tyler-ross-0b206122b) 
-* Zel Imbriaco    | [Github](https://github.com/zel-imbriaco) | [LinkedIn](https://www.linkedin.com/in/zimbriaco/) 
+* Alex Psitos     | [Github](https://github.com/psitosam) | [LinkedIn](https://www.linkedin.com/in/alex-psitos-5429a1232/)
+* Brylan Gannon   | [Github](https://github.com/B-gann21) | [LinkedIn](https://www.linkedin.com/in/brylan-gannon-81986b232/)
+* Drew Proebstel  | [Github](https://github.com/DrewProebstel) | [LinkedIn](https://www.linkedin.com/in/drew-proebstel/)
+* Joseph Senecal  | [Github](https://github.com/Josenecal) | [LinkedIn](https://www.linkedin.com/in/joseph-senecal-3947a9232/)
+* Tyler Ross      | [Github](https://github.com/Tross0208) | [LinkedIn](http://www.linkedin.com/in/tyler-ross-0b206122b)
+* Zel Imbriaco    | [Github](https://github.com/zel-imbriaco) | [LinkedIn](https://www.linkedin.com/in/zimbriaco/)
 
 ### To Contribute
 
