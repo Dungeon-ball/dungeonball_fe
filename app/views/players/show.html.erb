@@ -6,7 +6,7 @@
 
   <% if current_user %>
     <% if !PartyFacade.player_in_party?(current_user.id, @player.id) %>
-      <%= button_to "Add Player to My Party", url: "/parties/#{current_user.id}/players", player_id: @player.id, method: :post %>
+      <%= button_to "Add Player to My Party", "/parties/#{current_user.id}/players", player_id: @player.id, method: :post %>
       <% else %>
       <p>Party Member</p>
     <% end %>

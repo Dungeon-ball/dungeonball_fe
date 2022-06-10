@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   # post '/login', to: 'sessions#create'
   # get '/logout', to: 'sessions#destroy'
   # post '/auth/twitter/callback', to: 'sessions#create'
+  post '/parties/:id/players', to: 'parties#update'
   post '/auth/twitter', as: :twitter_login
   get '/auth/twitter/callback', to: 'sessions#create'
   get '/auth/failure', to: redirect('/')
@@ -14,7 +15,6 @@ Rails.application.routes.draw do
   get '/players/:id', to: 'players#show'
   get 'parties/:id', to: 'parties#show'
   get '/party', to: 'parties#show'
-  post '/parties/:id/players', to: 'parties#update'
   # resources :users, only: [:create] do
   #   resources :parties, only:[:show, :update, :destroy] do
   #     resources :players, only:[:show]

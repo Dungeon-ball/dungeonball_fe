@@ -6,7 +6,9 @@ class PartyService
   end
 
   def self.get_party_by_id(user_id)
-    response = conn.get("/api/v1/party")
+    response = conn.get("/api/v1/party") do |r|
+      r.params[:user_id] = user_id
+    end
     JSON.parse(response.body, symbolize_names: true)
   end
 
