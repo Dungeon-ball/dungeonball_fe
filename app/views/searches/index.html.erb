@@ -1,4 +1,12 @@
+<div class="container">
+  <% if @players.length > 0 %>
+  <ul>
+    <%@players.each do |player|%>
+    <li><h3><%= link_to "#{player.name}", "/players/#{player.id}"%></h3></li>
+    <%end%>
+  </ul>
 
-  <%@players.each do |player|%>
-    <%= link_to "#{player.name}", "/players/#{player.id}"%>
-  <%end%>
+  <% else %>
+  <h3>Sorry, no results match your search. Try Again!</h3>
+  <% end %>
+</div>

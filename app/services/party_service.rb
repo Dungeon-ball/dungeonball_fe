@@ -19,12 +19,4 @@ class PartyService
     end
     JSON.parse(response.body, symbolize_names: true)
   end
-
-  # def self.get_party_by_id(user_id)
-  #   get_url("/api/v1/party", {query: user_id})
-  # end
-
-  # def self.update_player_party(user_id, player_id)
-  #   post_url("/api/v1/parties/#{user_id}/players", {query: player_id})
-  # end
 end
